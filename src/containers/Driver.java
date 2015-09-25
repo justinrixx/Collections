@@ -14,7 +14,7 @@ public class Driver {
     public static void main(String[] args) {
         
         // instantiate an ArrayList
-        LinkedList<Integer> list = new LinkedList();
+        ArrayList<Integer> list = new ArrayList();
         
         
         // add some stuff to the list
@@ -40,10 +40,18 @@ public class Driver {
         
         System.out.println("Clear.\nSize: " + list.size());
         
-        list.add(3);
-        list.add(2);
-        list.add(1);
+        for (int i = 0; i < 15; i++) {
+            list.add(i);
+        }
         
+        System.out.println("Size: " + list.size());
+        
+        for (Integer i : list) {
+            System.out.println(i);
+        }
+        
+        System.out.println("Remove item 3");
+        list.remove(3);
         System.out.println("Size: " + list.size());
         
         for (Integer i : list) {

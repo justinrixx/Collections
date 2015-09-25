@@ -66,6 +66,21 @@ public class ArrayList<T> implements List<T> {
         mSize++;
     }
     
+    public void remove(int location) {
+        
+        if (location < 0 || location >= mCapacity) {
+            throw new ArrayIndexOutOfBoundsException("Capacity: " + mCapacity + "; Index: " + location);
+        }
+        
+        for (int i = location; i < mSize; i++) {
+            if (i + 1 < mSize) {
+                mArray[i] = mArray[i + 1];
+            }
+        }
+        
+        mSize--;
+    }
+    
     public T get(int index) {
         
         if (index < 0 || index >= mCapacity) {
