@@ -14,13 +14,15 @@ public class Driver {
     public static void main(String[] args) {
         
         // instantiate an ArrayList
-        ArrayList<Integer> list = new ArrayList();
+        LinkedList<Integer> list = new LinkedList();
         
         
         // add some stuff to the list
         list.add(1);
         list.add(2);
         list.add(3);
+        
+        System.out.println("Size: " + list.size());
         
         Iterator it = list.iterator();
         
@@ -35,12 +37,17 @@ public class Driver {
         
         list.clear();
         
+        
+        System.out.println("Clear.\nSize: " + list.size());
+        
         list.add(3);
         list.add(2);
         list.add(1);
         
-        for (int i = 0; i < list.size(); i++) {
-            System.out.println(list.get(i));
+        System.out.println("Size: " + list.size());
+        
+        for (Integer i : list) {
+            System.out.println(i);
         }
     }
     
