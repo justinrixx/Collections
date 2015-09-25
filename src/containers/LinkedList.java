@@ -31,7 +31,7 @@ public class LinkedList<T> implements List<T>{
             }
         }
         
-        size++;
+        mSize++;
     }
     
     public void addToFront(T t) {
@@ -50,7 +50,7 @@ public class LinkedList<T> implements List<T>{
             }
         }
         
-        size++;
+        mSize++;
     }
 
     @Override
@@ -60,7 +60,7 @@ public class LinkedList<T> implements List<T>{
         head = null;
         tail = null;
         
-        size = 0;
+        mSize = 0;
     }
 
     @Override
@@ -98,11 +98,7 @@ public class LinkedList<T> implements List<T>{
     @Override
     public boolean isEmpty() {
         
-        if (size == 0) {
-            return true;
-        }
-        
-        return false;
+        return mSize == 0;
     }
 
     @Override
@@ -112,12 +108,12 @@ public class LinkedList<T> implements List<T>{
 
     @Override
     public int size() {
-        return size;
+        return mSize;
     }
 
     @Override
     public T[] toArray() {
-        Object[] array = new Object[size];
+        Object[] array = new Object[mSize];
         
         int i = 0;
         Node n = head;
@@ -131,7 +127,7 @@ public class LinkedList<T> implements List<T>{
     
     private Node head;
     private Node tail;
-    private int size;
+    private int mSize;
     
     /**
      * A node in the list
